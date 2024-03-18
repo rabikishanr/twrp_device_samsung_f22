@@ -1,0 +1,20 @@
+/boot			emmc	/dev/block/platform/bootdevice/by-name/boot		flags=backup=1;flashimg;display="Boot"
+/cache			ext4	/dev/block/platform/bootdevice/by-name/cache
+/efs			emmc	/dev/block/platform/bootdevice/by-name/efs		flags=backup=1;display="EFS"
+/sec_efs		emmc	/dev/block/platform/bootdevice/by-name/sec_efs	flags=backup=1;display="Secondary EFS"
+
+
+#NONVOLATILE PARTITIONS
+/nvram			emmc	/dev/block/platform/bootdevice/by-name/nvram		flags=display="NVRAM";backup=1;
+/nvcfg			emmc	/dev/block/platform/bootdevice/by-name/nvcfg		flags=display="NVCFG";backup=1;subpartitionof=/nvram;
+/nvdata		emmc	/dev/block/platform/bootdevice/by-name/nvdata		flags=display="NVDATA";backup=1;subpartitionof=/nvram;
+
+
+/optics		emmc	/dev/block/platform/bootdevice/by-name/optics		flags=backup=1;flashimg;display="Optics"
+/prism			emmc	/dev/block/platform/bootdevice/by-name/prism		flags=backup=1;flashimg;display="Prism"
+
+/recovery		emmc	/dev/block/platform/bootdevice/by-name/recovery	flags=backup=1;flashimg;display="Recovery"
+
+# external
+/sdcard1	          vfat	      /dev/block/mmcblk0p1	/dev/block/mmcblk0	     flags=display="MicroSD Card";storage;wipeingui;removable
+/usb_otg	          vfat        /dev/block/sdd1           /dev/block/sdd                           flags=fsflags=utf8;display="USB-Storage";storage;wipeingui;removable
