@@ -1,3 +1,0 @@
-add_lunch_combo twrp_f22-user
-add_lunch_combo twrp_f22-userdebug
-add_lunch_combo twrp_f22-eng
