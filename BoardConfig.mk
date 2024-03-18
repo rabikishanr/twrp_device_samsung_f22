@@ -99,6 +99,21 @@ TW_EXCLUDE_DEFAULT_USB_INIT := true
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
 
+# Recovery
+BOARD_USES_RECOVERY_AS_BOOT := true
+BOARD_HAS_NO_SELECT_BUTTON := true
+RECOVERY_SDCARD_ON_DATA := true
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
+TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
+
+# Hardware
+BOARD_USES_MTK_HARDWARE := true
+
+# Properties
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+
+
+
 
 # StatusBar
 TW_STATUS_ICONS_ALIGN := center
